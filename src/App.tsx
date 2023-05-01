@@ -1,6 +1,4 @@
-import styles from "./App.module.css";
 import Circle from "./components/Circle";
-import Counter from "./components/Counter";
 import * as d3 from "d3";
 
 function App() {
@@ -42,8 +40,8 @@ function App() {
   return (
     <div style={{ display: "flex" }}>
       <div id="conva"  style={{ width: "80%", height: "100vh", position:"relative" }}>
-        <Circle/> 
-        <Circle/> 
+        <Circle/>  
+        <Circle/>  
       </div>
       <div style={{ width: "20%", height: "100vh", background: "antiquewhite" }}>
         <button onclick={makeLine}>make line</button>
