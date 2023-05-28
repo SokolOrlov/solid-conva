@@ -5,14 +5,14 @@ type Props = {
 };
 
 const Box = ({ id }: Props) => {
-  let div: HTMLDivElement;
+  let div: HTMLDivElement | ((el: HTMLDivElement) => void) | undefined;
   let isDown: boolean;
   var offset = [0, 0];
   const [top, setTop] = createSignal(0);
   const [left, setLeft] = createSignal(0);
 
   const mouseDown = (e: any) => {
-    offset = [div.offsetLeft - e.clientX, div.offsetTop - e.clientY];
+    offset = [(div as HTMLDivElement).offsetLeft - e.clientX, (div as HTMLDivElement).offsetTop - e.clientY];
     isDown = true;
   };
   const mouseup = () => {
